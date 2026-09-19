@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ow-workbench.example/schemas/workflow.schema.json",
+  "title": "ow-workbench Workflow",
+  "description": "Canonical Phase-0 workflow specification for the ow-workbench benchmark.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "initial_state",
+    "objective",
+    "inputs",
+    "capabilities_tools",
+    "environment",
+    "constraints",
+    "hidden_fixtures",
+    "authority_boundary",
+    "acceptance_contract",
+    "independent_evaluation",
+    "required_evidence",
+    "terminal_outcome"
+  ],
+  "properties": {
+    "initial_state": {
+      "description": "The versioned, inspectable starting condition for the workflow.",
+      "type": "object"
+    },
+    "objective": {
+      "description": "The outcome the participant is asked to achieve.",
+      "type": "string",
+      "minLength": 1
+    },
+    "inputs": {
+      "description": "Information and artifacts available to the participant.",
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "capabilities_tools": {
+      "description": "Capabilities, tools, interfaces, limits, and side effects available during execution.",
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "environment": {
+      "description": "Software, services, data, permissions, network, clock, version, and resource conditions.",
+      "type": "object"
+    },
+    "constraints": {
+      "description": "Time, budget, safety, privacy, licensing, authority, and operational limits.",
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "hidden_fixtures": {
+      "description": "Versioned deterministic fixtures and controlled failure injections, including protected holdouts.",
+      "type": "object"
+    },
+    "authority_boundary": {
+      "description": "Actions the participant may take and actions requiring a named human or other authority.",
+      "type": "object"
+    },
+    "acceptance_contract": {
+      "description": "Observable conditions for deliverables, state transitions, evidence, and safe terminal behavior.",
+      "type": "object"
+    },
+    "independent_evaluation": {
+      "description": "Versioned checks applied independently to executed state and artifacts.",
+      "type": "object"
+    },
+    "required_evidence": {
+      "description": "The manifest, trace, artifacts, evaluator evidence, hashes, and configuration provenance required for audit.",
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "terminal_outcome": {
+      "description": "Provisional terminal outcome enum pending open decision 1.",
+      "type": "string",
+      "enum": ["VERIFIED", "FAILED", "BLOCKED"]
+    }
+  }
+}
