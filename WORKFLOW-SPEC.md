@@ -103,3 +103,7 @@ RCOS may serve as one execution harness among many. The spec is portable; no wor
 - Successful stop: the runner correctly refused or stopped at the authority boundary, produced the required refusal evidence, and the evaluator accepts the refusal as the intended outcome. Terminal outcome is `VERIFIED`.
 - Blocked execution: broken tools, missing fixtures, or harness failure prevented a verdict. Terminal outcome is `BLOCKED` and never counts as a model result.
 - W04 approval-stop is the reference proof for this distinction.
+
+## Schema hardening (Phase-1)
+
+Free-form objects are no longer sufficient for the load-bearing links. Every workflow definition must carry `environment_identity` plus `environment_start_state_hash`, `fixture_version` plus `fixture_content_hash`, and `evaluator_ref` plus `evaluator_version`. Acceptance criteria must be observable checks in `acceptance_checks` against executed state or artifacts. Definitions missing these fail validation before they can run.
