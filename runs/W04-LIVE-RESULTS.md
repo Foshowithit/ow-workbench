@@ -59,7 +59,7 @@ the failure stays public and the question goes to review.
 Each run directory is self-contained: `run-record.json` (trusted observation),
 `artifacts/` (runner-hashed), `trace.jsonl` (hash-chained),
 `verdict.json` (evaluator-signed, `evaluator_ref` + `evaluator_version` pinned),
-plus `participant_out/` quarantine and `participant_prompt.json` for audit.
+plus `participant_out/` quarantine and full-prompt `participant_prompt` trace events for audit.
 Re-run the evaluator: `python3 evals/w04-evaluator-v2.py runs/<RUN-ID>`
 (expect exit 0 = VERIFIED, 1 = FAILED, 2 = BLOCKED).
 All five records and four verdicts validate against `schemas/*.schema.json`.
