@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Foshowithit/ow-workbench/schemas/run-record.schema.json",
+  "title": "ow-workbench run record (P3: execution observation, never an outcome)",
+  "description": "Written by the trusted runner only. Records what was observed during one execution: configuration, fixture and environment hashes, trace hash, artifact hashes, cost, latency, and the participant's terminal claim. MUST NOT contain terminal_outcome; the disposition lives only in verdict.json, written by the independent evaluator.",
+  "type": "object",
+  "required": [
+    "run_id",
+    "workflow",
+    "workflow_version",
+    "execution_class",
+    "participant_behavior",
+    "model",
+    "provider",
+    "harness",
+    "runner_version",
+    "fixture_version",
+    "fixture_content_hash",
+    "environment_identity",
+    "environment_start_state_hash",
+    "environment_end_state_hash",
+    "trace_path",
+    "trace_hash",
+    "artifacts",
+    "evaluator_ref",
+    "evaluator_version",
+    "cost",
+    "latency_ms",
+    "claim",
+    "note"
+  ],
+  "properties": {
+    "run_id": {"type": "string", "minLength": 1},
+    "workflow": {"type": "string", "minLength": 1},
+    "workflow_version": {"type": "string", "minLength": 1},
+    "execution_class": {"type": "string", "enum": ["real-execution"], "description": "Only genuine executions through the trusted boundary. Static fixtures use execution_class reference-fixture and are never validated here."},
+    "participant_behavior": {"type": "string", "minLength": 1},
+    "model": {"type": "string", "minLength": 1},
+    "provider": {"type": "string", "minLength": 1},
+    "harness": {"type": "string", "minLength": 1},
+    "runner_version": {"type": "string", "minLength": 1},
+    "fixture_version": {"type": "string", "minLength": 1},
+    "fixture_content_hash": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "environment_identity": {"type": "string", "minLength": 1},
+    "environment_start_state_hash": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "environment_end_state_hash": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "trace_path": {"type": "string", "minLength": 1},
+    "trace_hash": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "sha256"],
+        "properties": {
+          "path": {"type": "string", "minLength": 1},
+          "sha256": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "evaluator_ref": {"type": "string", "minLength": 1},
+    "evaluator_version": {"type": "string", "minLength": 1},
+    "cost": {
+      "type": "object",
+      "required": ["tokens", "billed_usd"],
+      "properties": {
+        "tokens": {"type": "integer", "minimum": 0},
+        "billed_usd": {"type": "number", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "latency_ms": {"type": "integer", "minimum": 0},
+    "claim": {"type": "string", "minLength": 1},
+    "note": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": false
+}

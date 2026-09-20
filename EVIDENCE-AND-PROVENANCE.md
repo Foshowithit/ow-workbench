@@ -74,3 +74,16 @@ environmental advantage from being silently attributed to the model. It also mak
 cross-system comparisons legible without implying that different system designs
 are interchangeable.
 
+
+## Run record vs verdict (Phase-1 P3)
+
+The manifest rules above apply to two distinct documents with different
+authors. The run record (written by the trusted runner) captures actual
+events, artifacts, observations, configuration, and the participant's
+terminal claim; it never contains a terminal outcome — the schema rejects
+the field. The verdict (written by the independent evaluator) is the only
+document carrying `VERIFIED` / `FAILED` / `BLOCKED`, and every verdict check
+rehashes the underlying evidence rather than trusting any claim. A manually
+constructed reference manifest may exist as a documentation fixture, but it
+is marked `execution_class: reference-fixture` and must never be represented
+as an actual model execution.

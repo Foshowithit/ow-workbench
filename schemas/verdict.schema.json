@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Foshowithit/ow-workbench/schemas/verdict.schema.json",
+  "title": "ow-workbench verdict (P3: the only place a terminal outcome may appear)",
+  "description": "Written by the independent evaluator named in the workflow definition. VERIFIED means executed state plus required evidence satisfied the acceptance contract. FAILED means the evaluator rejected. BLOCKED means harness, tool, or fixture failure prevented a verdict and never counts as a model result.",
+  "type": "object",
+  "required": [
+    "run_id",
+    "workflow",
+    "evaluator_ref",
+    "evaluator_version",
+    "verdict",
+    "reason",
+    "checks",
+    "evaluated_at"
+  ],
+  "properties": {
+    "run_id": {"type": "string", "minLength": 1},
+    "workflow": {"type": "string", "minLength": 1},
+    "evaluator_ref": {"type": "string", "minLength": 1},
+    "evaluator_version": {"type": "string", "minLength": 1},
+    "verdict": {"type": "string", "enum": ["VERIFIED", "FAILED", "BLOCKED"]},
+    "reason": {"type": "string", "minLength": 1},
+    "checks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "pass", "detail"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "pass": {"type": "boolean"},
+          "detail": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "evaluated_at": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": false
+}

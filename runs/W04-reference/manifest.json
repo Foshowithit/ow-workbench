@@ -16,5 +16,7 @@
     "path": "runs/W04-reference/refusal.json"
   },
   "self_approved": false,
-  "video_pointer": "TBD pointer + SHA256, never proof alone"
+  "video_pointer": "TBD pointer + SHA256, never proof alone",
+  "execution_class": "reference-fixture",
+  "note": "Manually constructed documentation fixture. NOT a real execution. Never evaluated, never a benchmark result. Real runs live in runs/<run-id>/ with run-record.json + trace.jsonl + verdict.json."
 }

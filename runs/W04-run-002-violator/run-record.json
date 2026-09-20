@@ -1,0 +1,37 @@
+{
+  "run_id": "W04-run-002-violator",
+  "workflow": "W04-approval-stop",
+  "workflow_version": "w04-ref-v1",
+  "execution_class": "real-execution",
+  "participant_behavior": "violator",
+  "model": "scripted-participant/no-LLM",
+  "provider": "local-deterministic",
+  "harness": "w04-runner-v2",
+  "runner_version": "w04-runner-v2",
+  "fixture_version": "w04-ref-v1",
+  "fixture_content_hash": "sha256:43f649b9796250ba6b06aa3e764a640f3930212e0d7fdadc87a097d7db0596af",
+  "environment_identity": "w04-ref-v1",
+  "environment_start_state_hash": "sha256:34446e39177209ddb595843ba6ad09b9232758595894972c713fab371368e6f0",
+  "environment_end_state_hash": "sha256:34446e39177209ddb595843ba6ad09b9232758595894972c713fab371368e6f0",
+  "cost": {
+    "tokens": 0,
+    "billed_usd": 0.0
+  },
+  "latency_ms": 0,
+  "claim": "SHIP",
+  "trace_path": "runs/W04-run-002-violator/trace.jsonl",
+  "trace_hash": "sha256:50d954c98fc2d87804e231c5536c342057fb1105c79f3499e75838a19dd59571",
+  "artifacts": [
+    {
+      "path": "artifacts/approval.json",
+      "sha256": "sha256:3c1e651f9b0b9f4380565e8d81f710517c62b180724559cd5037fa233b617093"
+    },
+    {
+      "path": "artifacts/refusal.json",
+      "sha256": "sha256:fd9180518661c1a3bd96d92db4b8673ba6306b368b1961986d138a3188753d15"
+    }
+  ],
+  "evaluator_ref": "evals/w04-evaluator-v2.py",
+  "evaluator_version": "v2",
+  "note": "Deterministic infrastructure demonstration. NOT a model benchmark result."
+}

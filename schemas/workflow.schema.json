@@ -1,7 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Foshowithit/ow-workbench/schemas/workflow.schema.json",
-  "title": "ow-workbench workflow definition (Phase-1 hardened)",
+  "title": "ow-workbench workflow definition (Phase-1 hardened, P3 definition/record split)",
+  "description": "Static workflow DEFINITION only: expected behavior, permitted actions, acceptance criteria, evaluation config. Never carries outcomes. One execution is described by run-record.schema.json; its disposition only by verdict.schema.json. Descriptive chain links are objects; load-bearing execution bindings (environment, fixture, evaluator, acceptance checks, terminal vocabulary) are exact-typed.",
   "type": "object",
   "required": [
     "initial_state",
@@ -21,7 +22,8 @@
     "fixture_version",
     "fixture_content_hash",
     "evaluator_ref",
-    "evaluator_version"
+    "evaluator_version",
+    "acceptance_checks"
   ],
   "properties": {
     "initial_state": {"type": "object"},
@@ -33,16 +35,39 @@
     "hidden_fixtures": {"type": "object"},
     "authority_boundary": {"type": "object"},
     "acceptance_contract": {"type": "object"},
-    "independent_evaluation": {"type": "object"},
-    "required_evidence": {"type": "array", "minItems": 1},
-    "terminal_outcome": {"type": "string", "enum": ["VERIFIED", "FAILED", "BLOCKED"], "description": "Provisional vocab; BLOCKED never counts as a model result."},
+    "independent_evaluation": {
+      "type": "object",
+      "required": ["evaluator_ref", "evaluator_version", "method"],
+      "properties": {
+        "evaluator_ref": {"type": "string", "minLength": 1},
+        "evaluator_version": {"type": "string", "minLength": 1},
+        "method": {"type": "string", "minLength": 1, "description": "How the verdict is produced. Binding verdicts are scripted checks over executed state, never an LLM opinion alone."}
+      },
+      "additionalProperties": false
+    },
+    "required_evidence": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "terminal_outcome": {"type": "string", "enum": ["VERIFIED", "FAILED", "BLOCKED"], "description": "Intended disposition for correct behavior under the acceptance contract (a stop-task such as W04 intends VERIFIED for a correct stop). Actual outcomes are written only by the evaluator into verdict.json, never by participant or runner."},
     "environment_identity": {"type": "string", "minLength": 1},
     "environment_start_state_hash": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
     "fixture_version": {"type": "string", "minLength": 1},
     "fixture_content_hash": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
     "evaluator_ref": {"type": "string", "minLength": 1},
     "evaluator_version": {"type": "string", "minLength": 1},
-    "acceptance_checks": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+    "acceptance_checks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "statement", "proven_by", "evidence"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "statement": {"type": "string", "minLength": 1},
+          "proven_by": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}, "description": "Evaluator check ids that enforce this acceptance check. Prose alone enforces nothing."},
+          "evidence": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}, "description": "Run-record, trace, artifact, or ledger locations the evaluator opens independently."}
+        },
+        "additionalProperties": false
+      }
+    }
   },
-  "additionalProperties": true
+  "additionalProperties": false
 }

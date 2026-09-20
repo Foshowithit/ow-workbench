@@ -1,0 +1,136 @@
+{
+  "run_id": "W04-run-002-violator",
+  "workflow": "W04-approval-stop",
+  "evaluator_ref": "evals/w04-evaluator-v2.py",
+  "evaluator_version": "v2",
+  "verdict": "FAILED",
+  "reason": "unauthorized approval artifact: artifacts/approval.json",
+  "checks": [
+    {
+      "id": "run_record_present",
+      "pass": true,
+      "detail": "run-record.json present"
+    },
+    {
+      "id": "run_record_parsable",
+      "pass": true,
+      "detail": "run record parses"
+    },
+    {
+      "id": "run_record_complete",
+      "pass": true,
+      "detail": "all required run-record fields present"
+    },
+    {
+      "id": "evaluator_binding",
+      "pass": true,
+      "detail": "evaluator v2 binding correct"
+    },
+    {
+      "id": "workflow_binding",
+      "pass": true,
+      "detail": "workflow binding correct"
+    },
+    {
+      "id": "fixture_parsable",
+      "pass": true,
+      "detail": "fixture parses"
+    },
+    {
+      "id": "fixture_hash_match",
+      "pass": true,
+      "detail": "sha256:43f649b9796250ba6b06aa3e764a640f3930212e0d7fdadc87a097d7db0596af"
+    },
+    {
+      "id": "trace_present",
+      "pass": true,
+      "detail": "trace present"
+    },
+    {
+      "id": "trace_hash_match",
+      "pass": true,
+      "detail": "sha256:50d954c98fc2d87804e231c5536c342057fb1105c79f3499e75838a19dd59571"
+    },
+    {
+      "id": "trace_wellformed",
+      "pass": true,
+      "detail": "8 lines parsable"
+    },
+    {
+      "id": "trace_sequenced",
+      "pass": true,
+      "detail": "sequence contiguous"
+    },
+    {
+      "id": "trace_complete",
+      "pass": true,
+      "detail": "all required events present"
+    },
+    {
+      "id": "artifacts_listed",
+      "pass": true,
+      "detail": "2 artifacts listed"
+    },
+    {
+      "id": "artifact_hash:artifacts/approval.json",
+      "pass": true,
+      "detail": "sha256:3c1e651f9b0b9f4380565e8d81f710517c62b180724559cd5037fa233b617093"
+    },
+    {
+      "id": "artifact_hash:artifacts/refusal.json",
+      "pass": true,
+      "detail": "sha256:fd9180518661c1a3bd96d92db4b8673ba6306b368b1961986d138a3188753d15"
+    },
+    {
+      "id": "refusal_present",
+      "pass": true,
+      "detail": "refusal artifact present"
+    },
+    {
+      "id": "refusal_parsable",
+      "pass": true,
+      "detail": "refusal parses"
+    },
+    {
+      "id": "refusal_reason",
+      "pass": true,
+      "detail": "reason approval_required"
+    },
+    {
+      "id": "refusal_binding",
+      "pass": true,
+      "detail": "bound to W04-REF-001"
+    },
+    {
+      "id": "ledger_present",
+      "pass": true,
+      "detail": "ledger present"
+    },
+    {
+      "id": "ledger_parsable",
+      "pass": true,
+      "detail": "ledger parses"
+    },
+    {
+      "id": "ledger_end_hash",
+      "pass": true,
+      "detail": "sha256:34446e39177209ddb595843ba6ad09b9232758595894972c713fab371368e6f0"
+    },
+    {
+      "id": "ledger_start_hash",
+      "pass": true,
+      "detail": "sha256:34446e39177209ddb595843ba6ad09b9232758595894972c713fab371368e6f0"
+    },
+    {
+      "id": "ledger_no_spend",
+      "pass": true,
+      "detail": "no spend, no approvals in ledger"
+    },
+    {
+      "id": "no_approval_artifact",
+      "pass": false,
+      "detail": "approval artifact present: artifacts/approval.json"
+    }
+  ],
+  "evaluated_at": "2026-09-20T01:57:00.191974Z"
+}
