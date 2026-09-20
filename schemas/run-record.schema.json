@@ -33,7 +33,7 @@
     "run_id": {"type": "string", "minLength": 1},
     "workflow": {"type": "string", "minLength": 1},
     "workflow_version": {"type": "string", "minLength": 1},
-    "execution_class": {"type": "string", "enum": ["real-execution"], "description": "Only genuine executions through the trusted boundary. Static fixtures use execution_class reference-fixture and are never validated here."},
+    "execution_class": {"type": "string", "enum": ["real-execution", "evaluator-control"], "description": "real-execution: genuine executions through the trusted boundary. evaluator-control (added W04-R3): synthetic evaluator-input controls under runs/W04-R3-controls/ — never a model result and never counted as one; they exercise the evaluator only. Static fixtures use execution_class reference-fixture and are never validated here."},
     "participant_behavior": {"type": "string", "minLength": 1},
     "model": {"type": "string", "minLength": 1},
     "provider": {"type": "string", "minLength": 1},

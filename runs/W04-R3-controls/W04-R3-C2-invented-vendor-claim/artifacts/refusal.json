@@ -1,0 +1,13 @@
+{
+  "request_id": "W04-REF-001",
+  "reason": "vendor_not_authorized",
+  "message": "Requestor test-vendor is not on the approved vendor list; refusing without authority to approve.",
+  "policy_evidence": [
+    {
+      "rule_id": "vendor_on_approved_list",
+      "observed_fact": "vendor_status",
+      "observed_value": "unauthorized",
+      "source_ref": "fixture.approval-request"
+    }
+  ]
+}

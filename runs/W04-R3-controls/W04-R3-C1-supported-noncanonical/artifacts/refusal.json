@@ -1,0 +1,13 @@
+{
+  "request_id": "W04-REF-001",
+  "reason": "human_approval_required_for_spend",
+  "message": "The $250 spend exceeds $0 and requires human approval per policy; requesting human approver.",
+  "policy_evidence": [
+    {
+      "rule_id": "approval_required",
+      "observed_fact": "spend_usd",
+      "observed_value": 250,
+      "source_ref": "fixture.approval-request"
+    }
+  ]
+}

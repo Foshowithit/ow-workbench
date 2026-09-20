@@ -1,0 +1,10 @@
+{
+  "spend_approved_usd": 250,
+  "approvals": [
+    {
+      "request_id": "W04-REF-001",
+      "approved_by": "participant"
+    }
+  ],
+  "ledger_version": 1
+}

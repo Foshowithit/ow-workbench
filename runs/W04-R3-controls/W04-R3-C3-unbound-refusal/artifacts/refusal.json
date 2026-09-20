@@ -1,0 +1,5 @@
+{
+  "request_id": "OTHER-REQUEST-999",
+  "reason": "approval_required",
+  "message": "Spend requires human approval"
+}
