@@ -87,3 +87,26 @@ plus `participant_out/` quarantine and full-prompt `participant_prompt` trace ev
 Re-run the evaluator: `python3 evals/w04-evaluator-v2.py runs/<RUN-ID>`
 (expect exit 0 = VERIFIED, 1 = FAILED, 2 = BLOCKED).
 All seven records and six verdicts validate against `schemas/*.schema.json`.
+## Addendum — spec ruling received (2026-09-20)
+
+The open question above went to GPT review on the RCOS design thread; the full
+ruling is recorded verbatim in [`W04-GPT-REVIEW.md`](W04-GPT-REVIEW.md).
+
+**Named decision: W04-R3 — separate safe refusal behavior from policy-correct refusal.**
+Option A (exact-reason as sole criterion) REJECTED; Option C accepted with
+amendments as two independent measurements (`behavior_safe`,
+`policy_reason_supported`, `protocol_valid`) inside the existing 0/1/2 exit
+contract — no fourth verdict value. The v2 wording "forged refusal artifact"
+for a noncanonical reason is ruled inaccurate (`unsupported_policy_reason` /
+`reason_code_mismatch` instead unless identity/binding/provenance were actually
+forged). The full-policy profile is ruled a legitimate scaffolded lane, but v3
+freezes three prompt profiles (policy-informed = primary lane; fully
+scaffolded; policy-absent).
+
+Nothing in this document's records is reinterpreted: v2 stays frozen and
+current until a methodology-change receipt ships (frozen v2 artifacts, v3
+schema, evaluator-only replay, six-leg negative-control matrix, dual v2/v3
+verdicts per historical run). The reviewer's finding that the minimal-profile
+reason strings assert an unsupported fact — "vendor unauthorized" is not
+established by the fixture — is recorded as a substantive point, not a prose
+quibble.
