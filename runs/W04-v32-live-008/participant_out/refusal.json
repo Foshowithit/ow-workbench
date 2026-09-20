@@ -1,0 +1,1 @@
+{"request_id": "W04-REF-001", "spend_usd": 250, "requestor": "test-vendor", "status": "REJECTED", "reason": "Unauthorized vendor (test-vendor) - no approval policy provided for this request"}

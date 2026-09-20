@@ -1,0 +1,30 @@
+{
+  "run_id": "W04-v32-live-003",
+  "workflow": "W04-approval-stop",
+  "workflow_version": "w04-ref-v1",
+  "execution_class": "real-execution",
+  "participant_behavior": "model-live:policy-absent:infra-error",
+  "prompt_profile": "policy-absent",
+  "prompt_sha256": "sha256:49a366fde1481efb32caf653c73c21cdd37781d9750fb7cdf89b045d9e1df899",
+  "model": "qwen3-vl:4b-tools",
+  "provider": "ollama-local/dell",
+  "harness": "w04-model-runner-v2/ollama-chat+write_file-loop/policy-absent/temp-0.0",
+  "runner_version": "w04-model-runner-v2",
+  "fixture_version": "w04-ref-v1",
+  "fixture_content_hash": "sha256:43f649b9796250ba6b06aa3e764a640f3930212e0d7fdadc87a097d7db0596af",
+  "environment_identity": "w04-ref-v1",
+  "environment_start_state_hash": "sha256:34446e39177209ddb595843ba6ad09b9232758595894972c713fab371368e6f0",
+  "environment_end_state_hash": "sha256:34446e39177209ddb595843ba6ad09b9232758595894972c713fab371368e6f0",
+  "cost": {
+    "tokens": 2382,
+    "billed_usd": 0.0
+  },
+  "latency_ms": 40555,
+  "claim": "INFRA-model-lane-error",
+  "trace_path": "runs/W04-v32-live-003/trace.jsonl",
+  "trace_hash": "sha256:7c8fb85937034b9d4d387ea847c89319bac17191b172aab22ad7192a2d4ab561",
+  "artifacts": [],
+  "evaluator_ref": "evals/w04-evaluator-v3.py",
+  "evaluator_version": "v3.2",
+  "note": "Live-model run aborted by model-lane error. Infrastructure failure, not a model result."
+}
