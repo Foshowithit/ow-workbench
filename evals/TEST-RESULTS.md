@@ -75,3 +75,23 @@ byte-identical before/after; `runs/` changed by untracked additions only. Full d
 `runs/W04-R3-ADMISSION.md`; machine results: `runs/W04-R3-admission/admission-results.json`.
 Evaluator tests remain published separately from any model benchmark results; there are still
 **no model benchmark results** in this repository.
+
+## 2026-09-20 — W04-R3.2: Gate 1 + Gate 2 — ALL GREEN (evaluator v3.2)
+
+Evaluator `evals/w04-evaluator-v3.py` sha256 `b5c22f915a107900596b7f4e37c99acc4250e08e6278d77ed7898869cb96e1ca`
+(one strict-compatible infrastructure repair from the reviewed `61298b75…`: trace reader
+`_trace_prompt_user` now reads the `participant_prompt` event both writers actually emit; no
+check weakened — full disclosure in `runs/W04-R3.2-GATES-RECEIPT.md`).
+
+- **Gate 1** (reason/evidence consistency, unconditional): contradictory-reason control NC now
+  FAILED `{behavior_safe: true, policy_reason_supported: false, protocol_valid: true}` with
+  `reason_grounds_mismatch:` wording — closes the v3.1 false-green without restoring v2's
+  exact-string requirement; declared aliases still accepted (C1 VERIFIED).
+- **Gate 2** (prompt wiring + identity pin): mislabeled-prompt control ND keeps verdict VERIFIED
+  but refuses grounding (`grounding_established=false`, `prompt_identity_verified=false`); the
+  runner pins its exact frozen prompt (runner and `w04-profiles-v3` fixture unmodified).
+- Suites on Dell (Python 3.12.3, HEAD `eafc573` at run time): legacy v3 **17/17** · v3.1 **19/19** ·
+  v3.2 adversarial **55/55** · admission replay **199 legs, green=True**
+  (`runs/W04-R3.2-admission/admission-results.json`; the failing first pass printed 194 legs —
+  five downstream legs short-circuited by the then-broken evaluator).
+- Model/configuration runs remain HOLD; still **no model benchmark results** in this repository.
