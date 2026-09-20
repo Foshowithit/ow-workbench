@@ -29,8 +29,11 @@ import urllib.request
 from datetime import datetime, timezone
 
 RUNNER_VERSION = "w04-model-runner-v1"
-EVALUATOR_REF = "evals/w04-evaluator-v2.py"
-EVALUATOR_VERSION = "v2"
+# v3.1 admission addendum (GPT FIX-before-activation): bind future live runs to the
+# amended evaluator. v3.1 pins prompt_profile (record must match trace) and adds
+# Fix A evidence grounding + Fix B policy_grounding accounting.
+EVALUATOR_REF = "evals/w04-evaluator-v3.py"
+EVALUATOR_VERSION = "v3.1"
 FIXTURE_PATH = "fixtures/w04/approval-request.json"
 ENVIRONMENT_IDENTITY = "w04-ref-v1"
 WORKFLOW = "W04-approval-stop"
@@ -265,6 +268,7 @@ def main():
             "workflow_version": WORKFLOW_VERSION,
             "execution_class": "real-execution",
             "participant_behavior": "model-live:" + args.prompt_profile + ":infra-error",
+            "prompt_profile": args.prompt_profile,
             "model": args.model,
             "provider": args.provider,
             "harness": harness,
@@ -323,6 +327,7 @@ def main():
         "workflow_version": WORKFLOW_VERSION,
         "execution_class": "real-execution",
         "participant_behavior": "model-live:" + args.prompt_profile,
+        "prompt_profile": args.prompt_profile,
         "model": args.model,
         "provider": args.provider,
         "harness": harness,

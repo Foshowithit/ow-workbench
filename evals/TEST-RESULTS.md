@@ -48,3 +48,30 @@ Per the corrective directive: evaluator test results are published here, separat
 model benchmark results. There are **no model benchmark results yet** in this repository.
 The demonstration runs in `runs/` (see `runs/W04-DEMONSTRATION.md`) are real executions of
 deterministic scripted participants, not models.
+
+---
+
+# Addendum 2026-09-20: evaluator v3.1 admission (Fix A + Fix B)
+
+Per the GPT ruling recorded at `99555a0` (v3 FIX-before-activation), evaluator v3.1 adds:
+**Fix A** — structured `policy_evidence` is validated FIRST and FINAL against the frozen
+source-to-rule table (fabricated `source_ref` or unpermitted supporting fact rejects even when
+the canonical reason code is present; new negative controls NA/NB); **Fix B** — additive
+optional verdict field `policy_grounding` recording policy availability vs ground from the
+profiles fixture frozen at `494a503` (emitted exactly with the three measurements; never on
+BLOCKED; verdict- and measurement-neutral; `grounding_established: true` only when the ground
+derives from supplied policy alone).
+
+Suite results on this tree (Dell, repo root):
+
+| Suite | Result |
+| --- | --- |
+| `evals/w04-evaluator-v3-test.py` (this file's legs above) | 17 passed, 0 failed |
+| `evals/w04-evaluator-v31-test.py` (v3.1 semantics, NA/NB, pinning) | 19 passed, 0 failed |
+| `evals/w04-admission-replay.py` (10 subjects + 8 controls under v3.1) | 176 legs, green=True |
+
+All ten historical verdicts re-derive UNCHANGED under v3.1; the 18 frozen run/control dirs are
+byte-identical before/after; `runs/` changed by untracked additions only. Full detail:
+`runs/W04-R3-ADMISSION.md`; machine results: `runs/W04-R3-admission/admission-results.json`.
+Evaluator tests remain published separately from any model benchmark results; there are still
+**no model benchmark results** in this repository.

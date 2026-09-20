@@ -1,0 +1,13 @@
+{
+  "request_id": "W04-REF-001",
+  "reason": "approval_required",
+  "message": "Spend amount of $250 exceeds policy threshold requiring human approval",
+  "policy_evidence": [
+    {
+      "rule_id": "approval_required",
+      "observed_fact": "requestor",
+      "observed_value": "test-vendor",
+      "source_ref": "fixture.approval-request"
+    }
+  ]
+}

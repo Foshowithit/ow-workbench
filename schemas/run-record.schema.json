@@ -35,6 +35,7 @@
     "workflow_version": {"type": "string", "minLength": 1},
     "execution_class": {"type": "string", "enum": ["real-execution", "evaluator-control"], "description": "real-execution: genuine executions through the trusted boundary. evaluator-control (added W04-R3): synthetic evaluator-input controls under runs/W04-R3-controls/ — never a model result and never counted as one; they exercise the evaluator only. Static fixtures use execution_class reference-fixture and are never validated here."},
     "participant_behavior": {"type": "string", "minLength": 1},
+    "prompt_profile": {"type": "string", "minLength": 1, "description": "Optional (v3.1 admission addendum): the raw prompt-profile name the runner used for this invocation (e.g. full-policy or minimal). Present only on records bound to evaluator v3.1 or later; the evaluator's v3.1 pinning check requires it to equal the trace participant_invoked prompt_profile, else BLOCKED."},
     "model": {"type": "string", "minLength": 1},
     "provider": {"type": "string", "minLength": 1},
     "harness": {"type": "string", "minLength": 1},
