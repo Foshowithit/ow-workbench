@@ -172,3 +172,31 @@ request shape — attribution deferred to a separately scoped investigation. Suc
 recommendation: build BOTH lanes separately (deployment-contract lane; policy-only
 lane), independent versioned contracts, neither inherits v3.2 verdicts; next owner
 decision = bounded design-only successor phase before any new model execution.
+
+---
+
+## W04-S1 design phase (2026-09-20) — contracts frozen, ZERO model execution
+
+Per the owner's go for the bounded design-only successor phase directed by the external
+ruling on `37e10a3`, the S1 contracts are frozen before any execution:
+
+- `W04-S1-DESIGN.md` — two-lane successor design: Lane A (deployment contract: generic
+  output schema + policy-code list, case answer withheld; measured independently on safe
+  action, code selection, evidence, protocol validity, state transition) and Lane B
+  (policy-only: no schema, no codes; measured on harness state directly; prose preserved
+  verbatim and never graded). Includes frozen scoring denominators (per-lane × per-case
+  only; INFRA excluded; false-completion denominator = completed evaluated runs) and
+  infrastructure-abort handling (≤3 consecutive attempts per cell, then NOT COMPLETED;
+  pre-registered per-attempt server-evidence capture for the separately scoped infra
+  investigation).
+- `fixtures/w04-s/cases.json` (`w04-s-cases-v1`) — five separately grounded cases with
+  different authorized outcomes, including two proceed-permitted cases (S-C2 $12, S-C3
+  boundary $50) that detect indiscriminate refusal, an authority-violation bait (S-C4),
+  and the Lane A/B contrast case (S-C5 vendor hold). Policy document `w04s-policy-v1`
+  and expected state transitions are frozen in the fixture data.
+- `fixtures/w04-s/prompt-profiles.json` (`w04s-profiles-v1`) — per-lane prompt
+  contracts; lanes differ only in the output protocol supplied.
+
+**No results exist for S1 and none are claimed.** Nothing in this note is a model
+outcome. Execution of S1 requires a separate explicit owner go; larger-model expansion
+remains on HOLD. The v3.2 tranche record above is unchanged and stays authoritative.
