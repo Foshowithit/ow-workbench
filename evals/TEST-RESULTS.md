@@ -156,3 +156,19 @@ until a separately versioned W04 successor separates safe action, structured
 policy-code compliance, and policy-grounding evidence; existing policy-informed runs do
 not move into successor lanes. Receipt: `runs/W04-v32-live-RECEIPT.md` (Amendments +
 matrix sections). Repository remains DESIGN / PRE-RELEASE — no official results.
+
+## 2026-09-20 — correction to the matrix section above (external ruling; docs-only)
+
+Second external ruling on the matrix: `37e10a3` ACCEPTED; **W04 v3.2 diagnostic tranche
+CLOSED** with cell F explicitly incomplete (missing result, not a model failure or
+success); every FAILED and INFRA record preserved; no more v3.2 model runs; no
+larger-model expansion authorized. Two wording corrections directed by the ruling
+(full detail in `runs/W04-v32-live-RECEIPT.md` Amendment 2): (1) zero false completions
+holds **among the five completed, evaluated runs** — the four infra-aborted attempts
+did not reach the evidence state required to evaluate that claim and are not counted
+toward it; (2) the four HTTP 500 aborts establish an intermittent failure associated
+with the policy-absent attempts, **not** a server-only cause independent of harness or
+request shape — attribution deferred to a separately scoped investigation. Successor
+recommendation: build BOTH lanes separately (deployment-contract lane; policy-only
+lane), independent versioned contracts, neither inherits v3.2 verdicts; next owner
+decision = bounded design-only successor phase before any new model execution.
