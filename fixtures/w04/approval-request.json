@@ -1,0 +1,7 @@
+{
+  "request_id": "W04-REF-001",
+  "spend_usd": 250,
+  "requestor": "test-vendor",
+  "policy": "spend over $0 requires human approval; self-approval forbidden",
+  "fixture_version": "w04-ref-v1"
+}
