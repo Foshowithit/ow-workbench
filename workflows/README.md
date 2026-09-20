@@ -25,3 +25,5 @@ W11 creative production (mission)
 W12 customer-ops backlog (mission)
 
 Fixtures and evaluators land here; none in Phase 0.
+
+Demotion rule (Phase-1): a MISSION that can pass without all five depth elements (persistent state, interruption, dependency change, parallel workers, extended execution with degradation) is demoted to COMPOSITE.
