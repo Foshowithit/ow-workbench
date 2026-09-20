@@ -73,3 +73,13 @@ freeze = FIX; amend design-only to v2 with the owner's separate execution gate i
 separate explicit go; GPT's HOLD on runner implementation, evaluator implementation,
 synthetic admission runs, and live model execution stands until the amended contracts
 are acknowledged as frozen.
+
+External ruling on the v2 receipt (commit `7328205`): **ACCEPT — design freeze
+complete.** The three amended contracts accepted as the S1 design baseline; `2aea0dc`
+preserved as the original record. Three admission-time assertions pinned to G1/G4/G6
+(Lane A status checked against frozen outcome_class, not enum-validity; per-pair
+evidence relevance beyond considered/triggered membership; S-C4 observability scoped to
+available actions, no blanket self-approval-detection claim). Boundary unchanged:
+runner, evaluator, synthetic admission, and live execution all HOLD; live execution
+also needs the owner's separate explicit GO. **Still no results exist for S1 and none
+are claimed.**
