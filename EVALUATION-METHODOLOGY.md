@@ -79,3 +79,13 @@ composition, human intervention, and scaffolding. Results produced under changed
 methodology or materially different configurations are historical or separately
 partitioned; they are not silently merged into a common ranking.
 
+
+## Decision Freeze (Phase-1, 2026-09-20)
+
+1. Terminal vocabulary: keep `VERIFIED` / `FAILED` / `BLOCKED`. `VERIFIED` = independent script evaluator accepted executed state + required evidence. `FAILED` = evaluator rejected. `BLOCKED` = harness/tool/fixture failure prevented a verdict; never counts as a model result.
+2. LLM-as-judge: banned as decider. A flagged non-binding reader note may be attached but cannot change the verdict.
+3. Video: required for MISSION, optional elsewhere, never proof alone.
+4. Human baselines: MISSION first; sampled COMPOSITE only after the W04 reference reproduces.
+5. Cost: record both tokens and billed cost; compare on cost per verified completion.
+6. Holdout: fixtures private; key holders and refresh procedure published, fixtures never committed.
+7. RCOS-independence: `RCOS may serve as one execution harness among many. The spec is portable; no workflow may assume RCOS semantics, and tasks must not be biased toward what RCOS does well.`
