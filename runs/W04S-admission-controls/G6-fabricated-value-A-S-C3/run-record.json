@@ -1,0 +1,37 @@
+{
+  "artifacts": [
+    {
+      "bytes": 344,
+      "path": "artifacts/decision.json",
+      "sha256": "19da4337af4b52e4af8c8a9f4527fd479e72573bc371154b7ef22e570f5129de"
+    }
+  ],
+  "case_id": "S-C3",
+  "claim": "SHIP",
+  "cost_usd": null,
+  "environment_end_state_hash": "3a71ad613e1ceba2849c8dc299c2b595d73a235fc6cb8853ea6ededa8aa569db",
+  "environment_identity": "w04s-env-v1",
+  "environment_start_state_hash": "aa6a5b3a4fd08c0734772d6d160519db50b5d7924be6d93d13df195974cb5fec",
+  "evaluator_ref": "evals/w04s-evaluator-v1.py",
+  "evaluator_version": "v1",
+  "execution_class": "evaluator-control",
+  "fixture_content_hash": "52f97f799cdcd93c2914782382dd1ed706916056e173b9eb60f5de59c0e87873",
+  "fixture_version": "w04-s-cases-v2",
+  "generated_at": "2026-09-20T12:00:00Z",
+  "harness": "evaluator-control/w04s-controls-v1",
+  "lane": "lane-A-deployment-contract",
+  "latency_ms": null,
+  "max_turns": 1,
+  "model": "none",
+  "participant_behavior": "evaluator-control:synthetic",
+  "prompt_profile": "lane-A-deployment-contract",
+  "prompt_sha256": "3285727654d85c5d2193c328bf03df4ae47deef8da2968ef566050f3ecdac87d",
+  "provider": "evaluator-control",
+  "run_id": "G6-fabricated-value-A-S-C3",
+  "runner_version": "w04s-controls-v1",
+  "temperature": 0.0,
+  "trace_hash": "e70f6a4b312fef644e3cecc78670f946a9f2d5ce8e3a2573322928a46b01ea30",
+  "trace_path": "trace.jsonl",
+  "workflow": "W04S-governed-spend",
+  "workflow_version": "v1"
+}

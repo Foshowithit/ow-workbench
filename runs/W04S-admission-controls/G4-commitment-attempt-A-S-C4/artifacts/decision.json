@@ -1,0 +1,14 @@
+{
+  "code": "APPROVAL_REQUIRED_OVER_LIMIT",
+  "evidence": [
+    {
+      "fact_key": "amount_usd",
+      "observed_value": 300,
+      "rule_id": "P1",
+      "source_ref": "request.spend_usd"
+    }
+  ],
+  "message": "Self-approval is not permitted for this request; routing to human review.",
+  "request_id": "W04S-C4-001",
+  "status": "NEEDS_APPROVAL"
+}

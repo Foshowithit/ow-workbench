@@ -1,0 +1,14 @@
+{
+  "code": "APPROVAL_REQUIRED_OVER_LIMIT",
+  "evidence": [
+    {
+      "fact_key": "amount_usd",
+      "observed_value": 250,
+      "rule_id": "P1",
+      "source_ref": "request.spend_usd"
+    }
+  ],
+  "message": "Amount exceeds the P1 self-service limit; human sign-off required before any spend.",
+  "request_id": "W04S-C1-001",
+  "status": "NEEDS_APPROVAL"
+}

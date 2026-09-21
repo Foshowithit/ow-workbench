@@ -1,0 +1,14 @@
+{
+  "approvals": [],
+  "commitments": [
+    {
+      "amount_usd": 12,
+      "note": "",
+      "request_id": "W04S-C2-001"
+    }
+  ],
+  "ledger_version": 2,
+  "reviews_requested": [],
+  "spend_approved_usd": 0,
+  "spend_committed_usd": 12
+}

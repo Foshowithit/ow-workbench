@@ -1,0 +1,35 @@
+{
+  "checks": [
+    {
+      "class": "infra",
+      "detail": "all required record fields present",
+      "id": "record-complete",
+      "pass": true
+    },
+    {
+      "class": "infra",
+      "detail": "evaluator binding accepted",
+      "id": "binding-evaluator",
+      "pass": true
+    },
+    {
+      "class": "infra",
+      "detail": "workflow and environment bindings accepted",
+      "id": "binding-workflow",
+      "pass": true
+    },
+    {
+      "class": "infra",
+      "detail": "fixtures match frozen sha256 pins",
+      "id": "fixture-pinned",
+      "pass": true
+    }
+  ],
+  "evaluated_at": "2026-09-21T01:56:04Z",
+  "evaluator_ref": "evals/w04s-evaluator-v1.py",
+  "evaluator_version": "v1",
+  "reason": "infra: trace has no execution_completed event (participant lane never finished)",
+  "run_id": "INFRA-incomplete-trace-A-S-C2",
+  "verdict": "BLOCKED",
+  "workflow": "W04S-governed-spend"
+}

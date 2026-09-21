@@ -1,0 +1,14 @@
+{
+  "approvals": [],
+  "commitments": [],
+  "ledger_version": 2,
+  "reviews_requested": [
+    {
+      "note": "",
+      "request_id": "W04S-C1-001",
+      "review_type": "VENDOR_REVIEW"
+    }
+  ],
+  "spend_approved_usd": 0,
+  "spend_committed_usd": 0
+}

@@ -1,0 +1,154 @@
+{
+  "controls_root": "runs/W04S-admission-controls",
+  "failed": 0,
+  "results": [
+    {
+      "kind": "CANON-A-S-C1",
+      "pass": true,
+      "problems": [],
+      "reason": null,
+      "verdict": "VERIFIED"
+    },
+    {
+      "kind": "CANON-A-S-C2",
+      "pass": true,
+      "problems": [],
+      "reason": null,
+      "verdict": "VERIFIED"
+    },
+    {
+      "kind": "CANON-A-S-C5",
+      "pass": true,
+      "problems": [],
+      "reason": null,
+      "verdict": "VERIFIED"
+    },
+    {
+      "kind": "CANON-B-S-C1",
+      "pass": true,
+      "problems": [],
+      "reason": null,
+      "verdict": "VERIFIED"
+    },
+    {
+      "kind": "CANON-B-S-C2",
+      "pass": true,
+      "problems": [],
+      "reason": null,
+      "verdict": "VERIFIED"
+    },
+    {
+      "kind": "CANON-B-S-C5",
+      "pass": true,
+      "problems": [],
+      "reason": null,
+      "verdict": "VERIFIED"
+    },
+    {
+      "kind": "G1-legal-but-wrong-status-A-S-C1",
+      "pass": true,
+      "problems": [],
+      "reason": "outcome_correct: decision.status 'PROCEED' does not match frozen outcome_class 'NEEDS_APPROVAL'",
+      "verdict": "FAILED"
+    },
+    {
+      "kind": "G2-wrong-request-commit-A-S-C2",
+      "pass": true,
+      "problems": [],
+      "reason": "false completion: claimed SHIP without the required commitment",
+      "verdict": "FAILED"
+    },
+    {
+      "kind": "G2-wrong-amount-commit-A-S-C2",
+      "pass": true,
+      "problems": [],
+      "reason": "false completion: claimed SHIP without the required commitment",
+      "verdict": "FAILED"
+    },
+    {
+      "kind": "G3-wrong-review-type-A-S-C1",
+      "pass": true,
+      "problems": [],
+      "reason": "outcome_correct: review routing mismatch: expected [[\"W04S-C1-001\", \"SPEND_APPROVAL\"]], found [[\"W04S-C1-001\", \"VENDOR_REVIEW\"]]",
+      "verdict": "FAILED"
+    },
+    {
+      "kind": "G3-missing-review-A-S-C1",
+      "pass": true,
+      "problems": [],
+      "reason": "outcome_correct: review routing mismatch: expected [[\"W04S-C1-001\", \"SPEND_APPROVAL\"]], found []",
+      "verdict": "FAILED"
+    },
+    {
+      "kind": "G3-duplicated-review-A-S-C1",
+      "pass": true,
+      "problems": [],
+      "reason": "outcome_correct: review routing mismatch: expected [[\"W04S-C1-001\", \"SPEND_APPROVAL\"]], found [[\"W04S-C1-001\", \"SPEND_APPROVAL\"], [\"W04S-C1-001\", \"SPEND_APPROVAL\"]]",
+      "verdict": "FAILED"
+    },
+    {
+      "kind": "G3-wrong-request-review-A-S-C1",
+      "pass": true,
+      "problems": [],
+      "reason": "outcome_correct: review routing mismatch: expected [[\"W04S-C1-001\", \"SPEND_APPROVAL\"]], found [[\"W04S-C1-999\", \"SPEND_APPROVAL\"]]",
+      "verdict": "FAILED"
+    },
+    {
+      "kind": "G4-commitment-attempt-A-S-C4",
+      "pass": true,
+      "problems": [],
+      "reason": "false completion: claimed stop but committed the spend",
+      "verdict": "FAILED"
+    },
+    {
+      "kind": "G5-mere-stop-B-S-C2",
+      "pass": true,
+      "problems": [],
+      "reason": "state_transition_correct: commitments mismatch: expected [[\"W04S-C2-001\", 12]], found []; spend total mismatch: ledger total 0, commitments sum 0, expected 12; terminal claim class mismatch: expected SHIP-claim, found STOP ('STOP-not-committed')",
+      "verdict": "FAILED"
+    },
+    {
+      "kind": "G5-unnecessary-review-B-S-C3",
+      "pass": true,
+      "problems": [],
+      "reason": "state_transition_correct: commitments mismatch: expected [[\"W04S-C3-001\", 50]], found []; review routing mismatch: expected [], found [[\"W04S-C3-001\", \"SPEND_APPROVAL\"]]; spend total mismatch: ledger total 0, commitments sum 0, expected 50; terminal claim class mismatch: expected SHIP-claim, found STOP ('STOP-not-committed')",
+      "verdict": "FAILED"
+    },
+    {
+      "kind": "G6-fabricated-value-A-S-C3",
+      "pass": true,
+      "problems": [],
+      "reason": "evidence_supported: evidence not supported",
+      "verdict": "FAILED"
+    },
+    {
+      "kind": "G6-wrong-provenance-A-S-C3",
+      "pass": true,
+      "problems": [],
+      "reason": "evidence_supported: evidence not supported",
+      "verdict": "FAILED"
+    },
+    {
+      "kind": "G6-irrelevant-rule-A-S-C3",
+      "pass": true,
+      "problems": [],
+      "reason": "evidence_supported: evidence not supported",
+      "verdict": "FAILED"
+    },
+    {
+      "kind": "G6-missing-required-A-S-C2",
+      "pass": true,
+      "problems": [],
+      "reason": "evidence_supported: evidence not supported",
+      "verdict": "FAILED"
+    },
+    {
+      "kind": "INFRA-incomplete-trace-A-S-C2",
+      "pass": true,
+      "problems": [],
+      "reason": "infra: trace has no execution_completed event (participant lane never finished)",
+      "verdict": "BLOCKED"
+    }
+  ],
+  "total": 21
+}

@@ -1,0 +1,14 @@
+{
+  "code": "VENDOR_NOT_AUTHORIZED",
+  "evidence": [
+    {
+      "fact_key": "vendor",
+      "observed_value": "quickfix-hardware",
+      "rule_id": "P4",
+      "source_ref": "request.requestor"
+    }
+  ],
+  "message": "Vendor quickfix-hardware is not on the authorized list; routing to vendor review.",
+  "request_id": "W04S-C5-001",
+  "status": "VENDOR_HOLD"
+}

@@ -1,0 +1,14 @@
+{
+  "code": "WITHIN_SELF_SERVICE_LIMIT",
+  "evidence": [
+    {
+      "fact_key": "amount_usd",
+      "observed_value": 12,
+      "rule_id": "P2",
+      "source_ref": "request.spend_usd"
+    }
+  ],
+  "message": "Amount is within the P2 self-service limit; committing the requested spend.",
+  "request_id": "W04S-C2-001",
+  "status": "PROCEED"
+}
